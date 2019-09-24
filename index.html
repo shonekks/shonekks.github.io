@@ -1,0 +1,677 @@
+?<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+<title>Shone K Sunny</title>
+
+<style>
+   
+ /* Color Palette
+#2B2D42 - dark blue
+#8D99AE - light blue
+#EDF2F4 - blue/white
+#EF233C - red
+*/
+
+
+/* Global styles
+------------------------------------*/
+
+html 
+{
+  
+box-sizing: border-box;
+
+}
+
+*, *:before, *:after
+ {
+  
+box-sizing: inherit;
+
+}
+
+
+body
+ {
+    font-family: 'Spectral', serif;
+ 
+   /*font-family: 'Amatic SC', cursive;*/
+
+    margin:0;
+
+}
+
+
+a {
+	
+color:#EF233C;
+
+}
+
+
+a:hover 
+{
+	
+text-decoration: none;
+
+}
+
+h1, h2 {
+
+	font-family: 'Anton', sans-serif;
+
+}
+
+h1 {
+
+	font-size: 70px;
+
+
+}
+
+
+h2 {
+	
+font-size: 40px;
+
+	margin-top: 0;
+
+}
+
+
+h3 {
+	
+margin:0;
+
+
+}
+
+
+.content-wrap {
+
+	max-width: 950px;
+
+	margin: 0 auto;
+
+	padding:60px 50px;
+
+	overflow:auto;
+
+	/*border: 1px solid red;*/
+
+
+}
+
+
+.uppercase {
+	
+text-transform: uppercase;
+
+}
+
+
+.btn {
+
+	text-decoration: none;
+	
+background-color:#EF233C;
+
+	color: white;
+
+	padding: 10px;
+
+	display: inline-block;
+
+}
+
+
+section {
+
+	/*border: 3px solid green;*/
+
+}
+
+
+/* Header & Footer
+------------------------------------*/
+
+header , footer {
+
+	background-color: #2B2D42  ;
+
+	color:#8D99AE;
+
+}
+
+/* header */
+
+.profile-img {
+	
+height:300px;
+
+	width: 300px;
+
+	border-radius: 50%;
+
+	/*min-width:250px;*/
+
+
+}
+
+
+header {
+	
+padding-top: 50px;
+
+	position:relative;
+
+}
+
+header h1, header h2 {
+
+	color:#EDF2F4 ;
+	
+margin:0;
+
+}
+
+
+.download {
+	
+position:absolute;
+
+	bottom: 0;
+
+	right: 0;
+
+}
+
+/* footer */
+
+footer {
+
+	text-align: center;
+
+}
+
+.contact-info a {
+
+padding: 10px;
+
+display: inline-block;
+
+}
+
+
+
+/*Navigation*/
+
+nav {
+	
+
+text-align: center;
+
+	position: fixed;
+
+	top:0;
+
+	background-color: white;
+
+	width: 100%;
+
+	font-size: 0;
+
+
+}
+
+
+nav a {
+	
+display: inline-block;
+	
+
+padding: 15px 20px;
+
+	text-decoration: none;
+
+	text-transform: uppercase;
+
+	font-weight: bold;
+	
+color:#2B2D42;
+	
+transition: background-color 0.3s ease;
+	
+font-size: 16px;
+
+
+}
+
+nav a:hover {
+	
+background-color:#2B2D42;
+
+	color: white;
+
+}
+
+
+/* Work Experience
+------------------------------------*/
+
+.work {
+
+	background-color: #EDF2F4;
+
+
+}
+
+h3 ~ p {
+
+	margin:0;
+
+}
+
+.job-description {
+
+	margin-bottom: 25px;
+
+}
+
+.job-description p:first-of-type {
+
+	margin-top:0;
+
+}
+
+
+
+/* Education
+------------------------------------*/
+
+.education {
+	
+background: linear-gradient(rgba(141, 153, 174, 0.8),
+                 rgba(141, 153, 174, 0.5)), url('http://res.cloudinary.com/titherr/image/upload/v1524105432/graduation.jpg') no-repeat fixed;
+	
+background-size: cover;
+
+}
+
+
+p + h3 {
+
+	margin-top: 30px;
+
+}
+
+
+/* Media Queries
+------------------------------------*/
+
+
+@media (min-width: 900px) {
+	
+.col-narrow {
+
+	width: 37%;
+
+	float:left;
+	
+/* border: 1px solid black; */
+
+	/*min-height:225px;*/
+	
+}
+
+.col-wide{
+
+	width: 62%;
+
+	float:left;
+	
+padding-left:110px;
+	
+/*border: 1px solid black;*/
+
+	/*min-height:225px;*/
+
+	}
+
+
+}
+
+
+@media only screen and (max-width: 600px) { 
+ 
+ .profile-img {
+  
+  display:none;
+ 
+ }
+  
+header {
+   
+ text-align: center;
+  
+  padding-top: 10px;
+
+  }
+ 
+h2 
+{
+    
+text-align: center;
+
+  }
+  
+ 
+ nav {
+  
+  display:none;
+
+  }
+
+}
+
+
+ 
+
+  
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+
+</script>
+
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+ 
+   window.parent.postMessage("resize", "*");
+
+  }
+
+</script>
+
+</head>
+
+<body translate="no">
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<script src="https://use.fontawesome.com/bd138d87de.js">
+</script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shone K Sunny | Resume</title>
+
+<link href="https://fonts.googleapis.com/css?family=Anton|Spectral" rel="stylesheet">
+
+<link rel="stylesheet" href="_css/styles.css">
+
+</head>
+
+<body>
+
+
+<header id="about">
+
+<a href="https://res.cloudinary.com/dxku5evkm/image/upload/v1567219456/Ashwithpinto_1_esbzv3.pdf" download class="btn download">Download Resume</a>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#work">Experience</a>
+
+<a href="#education">Education</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="content-wrap">
+
+<img class="profile-img col-narrow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Shone.jpg/220px-Shone.jpg" alt="Connor Payne">
+
+<div class="col-wide">
+
+<h1>Shone K Sunny</h1>
+
+<p>I'm from calicut. Currently pursuing 4th year cse in Alvas institute of engineering and technology mijar, Manglore. </p>
+
+	<h3>PERSONAL PROFILE:</h3>
+
+	<li>Father’s Name : Sunny Joseph</li>
+
+	<li>Date of Birth : 06-09-1996</li>
+
+	<li>Gender : Male</li>
+	
+<li>Language Known : English,Malayalam,Hindi.</li>
+ 
+       <li>Address : Koottiyanicakal house, Koodranji, Kozhikode, 673604</li>
+
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+
+<section id="work" class="work">
+
+<div class="content-wrap">
+
+<h2>Experience</h2>
+
+
+<div class="col-narrow">
+
+<h3>TECHNICAL KNOWLEDGE:</h3>
+
+
+<p>
+</p>
+
+</div>
+
+
+<div class="col-wide job-description">
+
+<p>As follows:</p>
+
+<ul>
+
+<li>Good knowledge on basics of programming language like C, C++ and Java Technologies</li>
+
+<li>Good knowledge on Web Design</li>
+
+<li>Knowledge on Big Data Analytics</li>
+
+</ul>
+
+</div>
+
+<div class="col-narrow">
+
+<h3>TECHNICAL SKILLS:</h3>
+
+<p class="uppercase">
+ </p>
+
+<p>
+</p>
+
+</div>
+
+<div class="col-wide job-description">
+
+
+<p>As follows</p>
+
+<ul>
+
+<li>Familiar in MySQL, HTML and CSS</li>
+
+<li>Familiar with Operating Systems like Windows, Linux </li>
+	<li> Familiar with Packages like Microsoft Office and Anaconda</li>
+
+</ul>
+
+</div>
+
+<div class="col-narrow">
+
+<h3>INTERNSHIPS:</h3>
+
+</div>
+
+
+<div class="col-wide job-description">
+
+<p>detailes:</p>
+
+<ul>
+
+<li>DATA ANALYTICS,MACHINE LEARNING AND DEEP LEARNING</li>
+
+<li>Conducted: From 14-Jan-2019 to 30-Jan-2019</li>
+
+<li>Company: Indian Institute of Information and Technology , Allahabad</li>
+	
+
+</ul>
+
+</div> 
+
+	
+<div class="col-narrow">
+
+<h3>HOBBIES:</h3>
+
+</div>
+
+
+<div class="col-wide job-description">
+
+<p>As follows:</p>
+
+<ul>
+
+<li>Photography</li>
+
+<li>Reading Books</li>
+	<li>Antique Collection</li>
+
+
+</ul>
+
+</div>
+ 	
+
+
+
+</div>
+
+</section>
+
+
+<section id="education" class="education">
+
+<div class="content-wrap">
+
+<h2>Education</h2>
+
+
+<h3>Alvas institute of engineering, Manglore (2014 to present)</h3>
+
+<p>Bachelor of computer Science and Engineering</p>
+
+<h3>St.Sebastian's Higher Secondary School, Koodaranji(2012 to 2014)</h3>
+
+<p>Computer Science(PCMC)</p>
+
+<h3>Infant Jesus English medium School, thiruvambady(2004 to 2012)</h3>
+
+<p>student</p>
+
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer id="contact">
+
+<div class="content-wrap">
+
+<h2>Let's Keep in Touch!</h2>
+
+     <ul class="cf">
+
+
+	      <i class="fa fa-envelope fa-2x" aria-hidden="true">
+ </i>
+ 
+ <p class="text-center" id="mail">shonekks@gmail.com</p>
+	     <p class="text-center" id="website">shoneksunny.webs.com</p> 
+       <a href="https://www.facebook.com/ashwith.pinto.5" class="facebook" target="_blank">
+<i class="fa fa-facebook-official fa-2x"> |</i>
+</a>
+        
+<a href="https://www.linkedin.com/in/ashwith-pinto/" class="linkedin" target="_blank">
+<i class="fa fa-linkedin-square fa-2x"> |</i>
+</a>
+    
+     <a href="https://github.com/Ashwithpinto" target="_blank">
+<i class="fa fa-github fa-2x"> |</i>
+</a>
+	    
+  <a href="https://www.instagram.com/ashwithpinto/" target="_blank">
+
+<i class="fa fa-instagram fa-2x"> </i>
+</a>
+    
+
+  </ul>  
+ 
+   
+</div>
+
+</div>
+
+<p>Copyright 2019 @Shone K Sunny</p>
+
+</footer>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
+			
